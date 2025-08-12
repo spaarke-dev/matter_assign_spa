@@ -1,33 +1,77 @@
-# Node.js dependencies
+# --- Node / npm ---
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+# Use npm: commit package-lock.json
+# (and ignore lockfiles for other managers)
+# yarn.lock
+# pnpm-lock.yaml
 
-# Build output
-build/
+# --- Vite / React build + caches ---
 dist/
-out/
+build/
+.vite/
+vite.config.ts.timestamp-*
+*.tsbuildinfo
 
-# Local environment files
+# --- Testing / coverage ---
+coverage/
+*.coverage
+*.lcov
+
+# --- Env / local config (keep secrets out of git) ---
 .env
-.env.local
 .env.*.local
+*.local.settings.json
 
-# Logs
-*.log
-logs/
-
-# VS Code
-.vscode/
-*.code-workspace
-
-# OS-generated files
-.DS_Store
-Thumbs.db
-
-# Power Pages cache/temp
+# --- Power Pages / PAC CLI scratch (transient) ---
 .powerpages/
 .cache/
-temp/
+.temp/
+.tmp/
+*.bak
 
-testfile.txt
+# --- VS Code (share only extension recommendations by default) ---
+.vscode/*
+!.vscode/extensions.json
+# If you want to share workspace settings/tasks, unignore these:
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+
+# --- OS cruft & OneDrive temp files ---
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# Office temp (common with OneDrive sync)
+~$*
+# macOS (if teammates use Macs)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Logs ---
+*.log
+logs/
+*.pid
+*.pid.lock
+*.seed
+
+# --- Archives & dumps ---
+*.zip
+*.7z
+*.gz
+*.tgz
+*.bz2
+*.tar
+*.rar
+*.sql
+*.sqlite*
+*.dump
+
+# --- IDEs / misc ---
+.idea/
+*.iml
+*.swp
+*.swo
+*.tmp
